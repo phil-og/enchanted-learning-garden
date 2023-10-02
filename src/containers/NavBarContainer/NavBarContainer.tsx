@@ -16,22 +16,13 @@ import Button from '@mui/material/Button';
 import PageContainer from "../PageContainer/PageContainer";
 import './NavBarContainer.scss'
 
-interface Props {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window?: () => Window;
-}
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Vision', 'Contact'];
 
-export default function NavBarContainer(props: Props) {
-    const {window} = props;
+export default function NavBarContainer() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [pageContent, setPageContent] = React.useState("HOME");
-
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
@@ -39,6 +30,8 @@ export default function NavBarContainer(props: Props) {
     const onNavigationClick = (e?: React.MouseEvent<HTMLDivElement, MouseEvent> | React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         // @ts-ignore
         e ? setPageContent(e.target?.innerText) : setPageContent('HOME')
+
+        if(typeof window !== 'undefined') window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
 
     };
 
@@ -59,8 +52,6 @@ export default function NavBarContainer(props: Props) {
             </List>
         </Box>
     );
-
-    const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
         <Box sx={{display: 'flex'}}>
@@ -98,7 +89,6 @@ export default function NavBarContainer(props: Props) {
             </AppBar>
             <nav>
                 <Drawer
-                    container={container}
                     variant="temporary"
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
