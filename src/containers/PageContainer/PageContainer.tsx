@@ -3,6 +3,7 @@ import * as React from "react";
 import Home from "../../pages/Home";
 import Contact from "../../pages/Contact";
 import About from "../../pages/About";
+import './PageContainer.scss'
 
 export default function PageContainer(props: {pageContent: string}) {
     const [pageContent, setPageContent] = React.useState("HOME");
@@ -28,8 +29,8 @@ export default function PageContainer(props: {pageContent: string}) {
 
 
     return (
-        <>
+        <div className="page-container">
             {renderSwitchPageContent(pageContent)}
-        </>
+        </div>
     );
 }

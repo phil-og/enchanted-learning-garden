@@ -14,6 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import PageContainer from "../PageContainer/PageContainer";
+import './NavBarContainer.scss'
 
 interface Props {
     /**
@@ -35,9 +36,10 @@ export default function NavBarContainer(props: Props) {
         setMobileOpen((prevState) => !prevState);
     };
 
-    const onNavigationClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const onNavigationClick = (e?: React.MouseEvent<HTMLDivElement, MouseEvent> | React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         // @ts-ignore
-        setPageContent(e.target?.innerText)
+        e ? setPageContent(e.target?.innerText) : setPageContent('HOME')
+
     };
 
     const drawer = (
@@ -63,7 +65,7 @@ export default function NavBarContainer(props: Props) {
     return (
         <Box sx={{display: 'flex'}}>
             <CssBaseline/>
-            <AppBar component="nav">
+            <AppBar component="nav" className="nav-bar">
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -79,12 +81,13 @@ export default function NavBarContainer(props: Props) {
                         component="div"
                         sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
                         style={{textAlign: 'left'}}
+                        onClick={onNavigationClick}
                     >
                         Enchanted Learning Garden Logo
                     </Typography>
                     <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{color: '#fff'}}
+                            <Button key={item} sx={{color: 'inherit'}}
                                     onClick={(e) => onNavigationClick(e)}
                             >
                                 {item}
