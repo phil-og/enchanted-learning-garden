@@ -80,7 +80,7 @@ export default function NavBarContainer(props: Props) {
                         variant="h6"
                         component="div"
                         sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
-                        style={{textAlign: 'left'}}
+                        style={{textAlign: 'left', cursor: "pointer"}}
                         onClick={onNavigationClick}
                     >
                         Enchanted Learning Garden Logo
