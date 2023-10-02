@@ -1,16 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
+import NavBar from "./containers/NavBarContainer/NavBarContainer";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/*<img src={logo} className="App-logo" alt="logo" />*/}
-        <p>
-          enchanted-learning-garden - under construction
-        </p>
-      </header>
+        <NavBar/>
     </div>
   );
 }
