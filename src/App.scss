@@ -2,6 +2,11 @@
 
 .App {
   text-align: center;
+
+  li{
+    list-style: none;
+  }
+
 }
 
 .App-logo {
@@ -38,3 +43,4 @@
     transform: rotate(360deg);
   }
 }
+

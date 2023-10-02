@@ -25,7 +25,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Home', 'About', 'Vision', 'Contact'];
 
 export default function NavBarContainer(props: Props) {
     const {window} = props;
@@ -115,10 +115,7 @@ export default function NavBarContainer(props: Props) {
             </nav>
             <Box component="main" sx={{p: 3}}>
                 <Toolbar/>
-                <Typography>
-
-                    <PageContainer pageContent={pageContent}/>
-                </Typography>
+                <PageContainer pageContent={pageContent}/>
             </Box>
         </Box>
     );

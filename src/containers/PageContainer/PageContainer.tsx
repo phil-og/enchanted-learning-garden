@@ -4,6 +4,7 @@ import Home from "../../pages/Home";
 import Contact from "../../pages/Contact";
 import About from "../../pages/About";
 import './PageContainer.scss'
+import Vision from "../../pages/Vision";
 
 export default function PageContainer(props: {pageContent: string}) {
     const [pageContent, setPageContent] = React.useState("HOME");
@@ -22,6 +23,8 @@ export default function PageContainer(props: {pageContent: string}) {
                 return <Contact/>;
             case 'ABOUT':
                 return <About/>;
+            case 'VISION':
+                return <Vision/>;
             default:
                 return <Home/>;
         }
@@ -30,6 +33,9 @@ export default function PageContainer(props: {pageContent: string}) {
 
     return (
         <div className="page-container">
+
+            <img src="/assets/home-image.jpg" alt="image" />
+
             {renderSwitchPageContent(pageContent)}
         </div>
     );
