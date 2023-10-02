@@ -16,7 +16,7 @@ export default function PageContainer(props: {pageContent: string}) {
 
 
     const renderSwitchPageContent = (param: string) => {
-        switch(param) {
+        switch(param.toUpperCase()) {
             case 'HOME':
                 return <Home/>;
             case 'CONTACT':
