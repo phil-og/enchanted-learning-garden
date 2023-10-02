@@ -29,9 +29,15 @@ const navItems = ['Home', 'About', 'Contact'];
 export default function NavBarContainer(props: Props) {
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [pageContent, setPageContent] = React.useState("HOME");
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
+    };
+
+    const onNavigationClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        // @ts-ignore
+        setPageContent(e.target?.innerText)
     };
 
     const drawer = (
@@ -43,7 +49,7 @@ export default function NavBarContainer(props: Props) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{textAlign: 'center'}}>
+                        <ListItemButton sx={{textAlign: 'center'}} onClick={(e) => onNavigationClick(e)}>
                             <ListItemText primary={item}/>
                         </ListItemButton>
                     </ListItem>
@@ -78,7 +84,9 @@ export default function NavBarContainer(props: Props) {
                     </Typography>
                     <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{color: '#fff'}}>
+                            <Button key={item} sx={{color: '#fff'}}
+                                    onClick={(e) => onNavigationClick(e)}
+                            >
                                 {item}
                             </Button>
                         ))}
@@ -106,7 +114,7 @@ export default function NavBarContainer(props: Props) {
                 <Toolbar/>
                 <Typography>
 
-                    <PageContainer/>
+                    <PageContainer pageContent={pageContent}/>
                 </Typography>
             </Box>
         </Box>
