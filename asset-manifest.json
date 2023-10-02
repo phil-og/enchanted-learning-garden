@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/enchanted-learning-garden/static/css/main.55ab4e29.css",
-    "main.js": "/enchanted-learning-garden/static/js/main.47d73fa5.js",
-    "static/js/787.bfd23cda.chunk.js": "/enchanted-learning-garden/static/js/787.bfd23cda.chunk.js",
-    "index.html": "/enchanted-learning-garden/index.html",
-    "main.55ab4e29.css.map": "/enchanted-learning-garden/static/css/main.55ab4e29.css.map",
-    "main.47d73fa5.js.map": "/enchanted-learning-garden/static/js/main.47d73fa5.js.map",
-    "787.bfd23cda.chunk.js.map": "/enchanted-learning-garden/static/js/787.bfd23cda.chunk.js.map"
+    "main.css": "/static/css/main.55ab4e29.css",
+    "main.js": "/static/js/main.2434d220.js",
+    "static/js/787.bfd23cda.chunk.js": "/static/js/787.bfd23cda.chunk.js",
+    "index.html": "/index.html",
+    "main.55ab4e29.css.map": "/static/css/main.55ab4e29.css.map",
+    "main.2434d220.js.map": "/static/js/main.2434d220.js.map",
+    "787.bfd23cda.chunk.js.map": "/static/js/787.bfd23cda.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.55ab4e29.css",
-    "static/js/main.47d73fa5.js"
+    "static/js/main.2434d220.js"
   ]
 }
